@@ -1,0 +1,47 @@
+{
+  "name": "budget-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.9.3",
+    "@emotion/server": "^11.4.0",
+    "@fortawesome/fontawesome-svg-core": "^6.1.2",
+    "@fortawesome/free-brands-svg-icons": "^6.1.2",
+    "@fortawesome/free-solid-svg-icons": "^6.1.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@mantine/core": "^5.0.0",
+    "@mantine/dates": "^5.0.0",
+    "@mantine/form": "^5.0.0",
+    "@mantine/hooks": "^5.0.0",
+    "@mantine/modals": "^5.0.0",
+    "@mantine/next": "^5.0.0",
+    "@mantine/notifications": "^5.0.0",
+    "@mantine/nprogress": "^5.0.0",
+    "@mantine/prism": "^5.0.0",
+    "@mantine/spotlight": "^5.0.0",
+    "@prisma/client": "^4.1.1",
+    "@tabler/icons": "^1.78.1",
+    "axios": "^0.27.2",
+    "chart.js": "^3.8.2",
+    "dayjs": "^1.11.4",
+    "next": "12.2.3",
+    "next-auth": "^4.10.2",
+    "react": "18.2.0",
+    "react-chartjs-2": "^4.3.1",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.7",
+    "eslint": "8.20.0",
+    "eslint-config-next": "12.2.3",
+    "postcss": "^8.4.14",
+    "prisma": "^4.1.1",
+    "tailwindcss": "^3.1.6"
+  }
+}
