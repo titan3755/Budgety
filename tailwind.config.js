@@ -8,7 +8,9 @@ module.exports = {
     fontFamily: {
       jsans: "'Josefin Sans', sans-serif",
       overpass: "'Overpass', sans-serif",
-      ubuntu: "'Ubuntu', sans-serif"
+      ubuntu: "'Ubuntu', sans-serif",
+      right: "'Righteous', cursive",
+      alata: "'Alata', sans-serif"
     },
     extend: {},
   },

@@ -9,7 +9,7 @@ export const featureCards = [
     },
     {
         icon: faCreditCard,
-        title: 'Data Redundancy',
+        title: 'Data Visualization',
         desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         color: '#e5989b'
     },
@@ -21,7 +21,7 @@ export const featureCards = [
     },
     {
         icon: faUserGroup,
-        title: 'Budget Stats',
+        title: 'Savings Recommendations',
         desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         color: '#8ecae6'
     }

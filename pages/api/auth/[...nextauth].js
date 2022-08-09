@@ -1,6 +1,10 @@
 import NextAuth from "next-auth"
 import GoogleProvider from "next-auth/providers/google"
 import GithubProvider from "next-auth/providers/github"
+import FacebookProvider from "next-auth/providers/facebook"
+import prisma from "../../../clients/prisma"
+import { PrismaClientKnownRequestError } from "@prisma/client/runtime"
+
 export default NextAuth({
   // Configure one or more authentication providers
   providers: [
@@ -11,7 +15,31 @@ export default NextAuth({
     GithubProvider({
       clientId: process.env.GITHUB_CLIENT_ID,
       clientSecret: process.env.GITHUB_CLIENT_SECRET
+    }),
+    FacebookProvider({
+      clientId: process.env.FACEBOOK_CLIENT_ID,
+      clientSecret: process.env.FACEBOOK_CLIENT_SECRET
     })
   ],
+  events: {
+    signIn: async ({user, account, profile, isNewUser}) => {
+      try {
+        await prisma.budget.create({
+          data: {
+            email: user.email
+          }
+        })
+      }
+      catch (err) {
+        if (err instanceof PrismaClientKnownRequestError) {
+          // Thrown when existing user signs in
+          // Nothing done if existing user signs in
+        }
+        else {
+          console.error(`Error Occurred: ${err.message}`)
+        }
+      }
+    }
+  },
   secret: process.env.JWT_SECRET
 })

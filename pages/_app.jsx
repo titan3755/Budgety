@@ -1,10 +1,9 @@
 import "../styles/globals.css"
 import Head from "next/head"
-import Navbar from "../components/navbars/Navbar"
+import Header from "../components/headers/Header"
 import Footer from "../components/footers/Footer"
 import { MantineProvider, createEmotionCache } from "@mantine/core"
-import { NotificationsProvider } from '@mantine/notifications'
-import { ModalsProvider } from '@mantine/modals'
+import { NotificationsProvider } from "@mantine/notifications"
 import { useRouter } from "next/dist/client/router"
 import { SessionProvider } from "next-auth/react"
 
@@ -20,7 +19,7 @@ export default function BudgetApp({ Component, pageProps: { session, ...pageProp
       </Head>
       <SessionProvider session={session}>
       {
-        router.pathname === '/' || router.pathname === '/dashboard' ? <Navbar /> : <></>
+        router.pathname === '/' || router.pathname === '/dashboard' || router.pathname === '/privacy' ? <Header /> : <></>
       }
         <MantineProvider
           withGlobalStyles
@@ -30,15 +29,13 @@ export default function BudgetApp({ Component, pageProps: { session, ...pageProp
             colorScheme: 'light',
           }}
         >
-          <ModalsProvider>
-            <NotificationsProvider>
-              <Component {...pageProps} />
-            </NotificationsProvider>
-          </ModalsProvider>
+          <NotificationsProvider>
+            <Component {...pageProps} />
+          </NotificationsProvider>
         </MantineProvider>
       </SessionProvider>
       {
-        router.pathname === '/' || router.pathname === '/dashboard' ? <Footer /> : <></>
+        router.pathname === '/' || router.pathname === '/privacy' ? <Footer /> : <></>
       }
     </>
   )

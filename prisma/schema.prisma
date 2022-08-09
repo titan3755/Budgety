@@ -11,11 +11,16 @@ datasource db {
 }
 
 model Newsletter {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
+  id    String @id @default(auto()) @map("_id") @db.ObjectId
   email String @unique
 }
 
 model Dev {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
+  id   String @id @default(auto()) @map("_id") @db.ObjectId
   test String
+}
+
+model Budget {
+  id    String @id @default(auto()) @map("_id") @db.ObjectId
+  email String @unique
 }

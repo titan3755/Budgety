@@ -1,10 +1,10 @@
 import { createGetInitialProps } from "@mantine/next"
-import Document, { Head, Html, Main, NextScript } from 'next/document';
+import Document, { Head, Html, Main, NextScript } from 'next/document'
 
-const getInitialProps = createGetInitialProps();
+const getInitialProps = createGetInitialProps()
 
 export default class _Document extends Document {
-  static getInitialProps = getInitialProps;
+  static getInitialProps = getInitialProps
   render() {
     return (
       <Html>
@@ -14,6 +14,8 @@ export default class _Document extends Document {
           <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet" />
           <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
           <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet" />
+          <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet" />
+          <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet" />
         </Head>
         <body>
           <Main />
