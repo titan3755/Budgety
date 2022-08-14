@@ -31,7 +31,7 @@ export default function Balance() {
     return (
         <Fragment>
             <div className="h-full w-full gap-8 p-10 flex flex-col">
-                <div className="flex flex-row gap-8 align-middle">
+                <div className="flex flex-col md:flex-row gap-8 align-middle">
                     <BalanceCard />
                     <IncomeCard chartData={chartData.balanceChart} />
                     <ChartCard />
@@ -47,7 +47,7 @@ export default function Balance() {
 function BalanceCard() {
     return (
         <Fragment>
-            <div className="flex flex-col p-10 rounded-lg shadow-xl w-[30%]">
+            <div className="flex flex-col p-10 rounded-lg shadow-md w-full md:w-[33%]">
                 <div className="flex flex-row gap-2 w-full">
                     <div className="flex flex-row gap-5 w-full">
                         <div className="flex flex-col gap-3">
@@ -84,7 +84,7 @@ function CircularBadge({icon}) {
 function IncomeCard({chartData}) {
     return (
         <Fragment>
-            <div className="flex flex-col p-10 rounded-lg shadow-xl w-[30%] gap-3">
+            <div className="flex flex-col p-10 rounded-lg shadow-md w-full md:w-[33%] gap-3">
                 <div className="flex flex-row justify-start align-middle w-full">
                     <h1 className="text-slate-400 text-base font-semibold">Income</h1>
                 </div>
@@ -107,7 +107,9 @@ function IncomeCard({chartData}) {
 function ChartCard() {
     return (
         <Fragment>
+            <div className="flex flex-col p-10 rounded-lg shadow-md w-full md:w-[33%]">
 
+            </div>
         </Fragment>
     )
 }
@@ -115,7 +117,7 @@ function ChartCard() {
 function Transactions() {
     return (
         <Fragment>
-            <div className="shadow-lg rounded-lg p-10 bg-gray-100 w-full h-full flex flex-col align-middle justify-center items-center">
+            <div className="shadow-inner rounded-lg p-10 bg-gray-100 w-full h-full flex flex-col align-middle justify-center items-center">
                 <div className="flex flex-col align-middle justify-center items-center">
                     <h1 className="text-slate-600 text-center text-3xl font-extralight font-alata">No recent transactions</h1>
                 </div>
