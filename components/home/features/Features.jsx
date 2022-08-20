@@ -2,17 +2,18 @@ import { Fragment } from "react"
 import { Badge } from "@mantine/core"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { featureCards } from "../../../data/iterators"
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid'
+import { homePageData } from "../../../data/pagedata"
 
 export default function Features() {
     return (
         <Fragment>
             <div className="flex flex-col align-middle justify-center items-center my-4">
                 <div className="flex flex-col align-middle justify-center items-center">
-                    <Badge color="indigo" size="lg" style={{width: `120px`}}>Features</Badge>
+                    <Badge color="indigo" size="lg" style={{width: `120px`}}>{homePageData.featuresData.badgeTitle}</Badge>
                     <div className="my-2 flex flex-col align-middle justify-center items-center">
-                        <h1 className="my-1 text-4xl font-extrabold text-slate-800 text-center">Features of Budgety</h1>
-                        <p className="mt-2 text-sm font-light text-gray-400 w-4/6 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore nulla, aliquid eaque nihil minus dolorem quis qui dicta consequuntur explicabo?</p>
+                        <h1 className="my-1 text-4xl font-extrabold text-slate-800 text-center">{homePageData.featuresData.title}</h1>
+                        <p className="mt-2 text-sm font-light text-gray-400 w-4/6 text-center">{homePageData.featuresData.desc}</p>
                     </div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 my-2 mt-6 p-8 items-center">

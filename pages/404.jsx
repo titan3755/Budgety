@@ -1,10 +1,11 @@
 import { Fragment } from "react"
 import Error from "../components/error/Error"
+import { errorData } from "../data/pagedata"
 
 export default function NotFoundPage() {
     return (
         <Fragment>
-            <Error errCode="404" errTitle="Requested page does not exist" errDesc="Page you are trying to navigate to does not exist. You may have mistyped the address, or the page has been moved to another URL. If you think this is a mistake, contact support." btnDesc="Back to Home page" btnAnchor="/" />
+            <Error errCode={errorData.notFound.errCode} errTitle={errorData.notFound.title} errDesc={errorData.notFound.desc} btnDesc={errorData.notFound.buttonText} btnAnchor="/" />
         </Fragment>
     )
 }

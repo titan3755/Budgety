@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faAt, faCheck, faXmark } from "@fortawesome/free-solid-svg-icons"
 import Image from "next/image"
 import axios from "axios"
+import { homePageData } from "../../../data/pagedata"
 
 export default function Newsletter() {
     const [emailIn, setEmailIn] = useState('')
@@ -42,8 +43,8 @@ export default function Newsletter() {
             <div className="flex flex-row align-middle justify-center py-10 mt-5 px-20">
                 <div className="w-full md:w-1/2 flex flex-col justify-center align-middle mx-5">
                     <div className="flex flex-col align-middle justify-center items-center md:items-start">
-                        <h1 className="my-2 text-[42px] sm:text-6xl font-extrabold font-overpass text-center md:text-left">Subscribe to our newsletter</h1>
-                        <p className="w-full sm:w-9/12 my-2 text-lg sm:text-xl font-normal text-center md:text-left">Want to receive updates and notifications regarding PhotoBytes Studios&apos; new projects? Newsletter&apos;s the way for that.</p>
+                        <h1 className="my-2 text-[42px] sm:text-6xl font-extrabold font-overpass text-center md:text-left">{homePageData.newsletterData.title}</h1>
+                        <p className="w-full sm:w-9/12 my-2 text-lg sm:text-xl font-normal text-center md:text-left">{homePageData.newsletterData.desc}</p>
                     </div>
                     <form onSubmit={handleSubmission}>
                         <div className="flex flex-row align-middle justify-start mt-5">

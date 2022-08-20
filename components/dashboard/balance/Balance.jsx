@@ -2,9 +2,10 @@ import { Fragment, useState } from "react"
 import { Progress } from "@mantine/core"
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons"
 import { Doughnut } from "react-chartjs-2"
-import {Chart, ArcElement} from 'chart.js'
+import {Chart, ArcElement, Legend} from 'chart.js'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-Chart.register(ArcElement);
+Chart.register(ArcElement)
+Chart.register(Legend)
 
 export default function Balance() {
     const [chartData, setChartData] = useState(
@@ -33,8 +34,8 @@ export default function Balance() {
             <div className="h-full w-full gap-8 p-10 flex flex-col">
                 <div className="flex flex-col md:flex-row gap-8 align-middle">
                     <BalanceCard />
-                    <IncomeCard chartData={chartData.balanceChart} />
-                    <ChartCard />
+                    <IncomeCard />
+                    <ChartCard chartExpenseData={chartData.balanceChart} chartIncomeData={chartData.balanceChart} />
                 </div>
                 <div className="h-full w-full">
                     <Transactions />
@@ -81,7 +82,7 @@ function CircularBadge({icon}) {
     )
 }
 
-function IncomeCard({chartData}) {
+function IncomeCard() {
     return (
         <Fragment>
             <div className="flex flex-col p-10 rounded-lg shadow-md w-full md:w-[33%] gap-3">
@@ -104,11 +105,27 @@ function IncomeCard({chartData}) {
     )
 }
 
-function ChartCard() {
+function ChartCard({chartIncomeData, chartExpenseData}) {
+    const chartOptions = {
+        cutout: 65,
+        plugins: {
+            legend: {
+                display: true,
+                labels: {
+                    usePointStyle: true
+                }
+            }
+        }
+    }
     return (
         <Fragment>
-            <div className="flex flex-col p-10 rounded-lg shadow-md w-full md:w-[33%]">
-
+            <div className="flex flex-row justify-center items-center align-middle gap-8 p-10 rounded-lg shadow-md w-full md:w-[33%]">
+                <div className="w-1/2">
+                    <Doughnut data={chartIncomeData} options={chartOptions} />
+                </div>
+                <div className="w-1/2">
+                    <Doughnut data={chartExpenseData} options={chartOptions} />
+                </div>
             </div>
         </Fragment>
     )
@@ -129,7 +146,9 @@ function Transactions() {
 function TransactionPart() {
     return (
         <Fragment>
+            <div className="">
 
+            </div>
         </Fragment>
     )
 }
