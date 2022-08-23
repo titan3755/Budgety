@@ -5,7 +5,7 @@ import FacebookProvider from "next-auth/providers/facebook"
 import prisma from "../../../clients/prisma"
 import { PrismaClientKnownRequestError } from "@prisma/client/runtime"
 
-export default NextAuth({
+export const authOptions = {
   // Configure one or more authentication providers
   providers: [
     GoogleProvider({
@@ -26,7 +26,10 @@ export default NextAuth({
       try {
         await prisma.budget.create({
           data: {
-            email: user.email
+            email: user.email,
+            income: 0,
+            expense: 0,
+            transactions: "[]"
           }
         })
       }
@@ -42,4 +45,6 @@ export default NextAuth({
     }
   },
   secret: process.env.JWT_SECRET
-})
+}
+
+export default NextAuth(authOptions)

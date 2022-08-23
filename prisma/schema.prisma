@@ -21,6 +21,9 @@ model Dev {
 }
 
 model Budget {
-  id    String @id @default(auto()) @map("_id") @db.ObjectId
-  email String @unique
+  id           String        @id @default(auto()) @map("_id") @db.ObjectId
+  email        String        @unique
+  income       Int
+  expense      Int
+  transactions String
 }

@@ -7,7 +7,7 @@ import Income from "./income/Income"
 import Expense from "./expense/Expense"
 import Statistics from "./statistics/Statistics"
 
-export default function Dashboard() {
+export default function Dashboard({data}) {
     const [sbarItem, setSbarItem] = useState(0)
     return (
         <Fragment>
@@ -19,22 +19,22 @@ export default function Dashboard() {
                     {
                         sbarItem === 0 
                             ?   (
-                                    <Balance />
+                                    <Balance data={data} />
                                 )
                             : 
                         sbarItem === 1 
                             ?   (
-                                    <Income />
+                                    <Income data={data} />
                                 )
                             :
                         sbarItem === 2
                             ?   (
-                                    <Expense />
+                                    <Expense data={data} />
                                 )
                             :
                         sbarItem === 3 
                             ?   (
-                                    <Statistics />
+                                    <Statistics data={data} />
                                 )
                             : <></>
                     }

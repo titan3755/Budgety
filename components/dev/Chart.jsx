@@ -1,5 +1,6 @@
 import { Fragment } from "react"
 import { useState } from "react"
+import { rangeCreator, randomRangeCreator } from "../../helpers/functions"
 import random from "random"
 import {
     Chart as ChartJS,
@@ -22,23 +23,6 @@ import {
     Tooltip,
     Legend
   );
-
-function rangeCreator() {
-    let arr = []
-    for (let x = 0; x < 20; x++) {
-        arr.push(x)
-    }
-    return arr
-}
-
-function randomRangeCreator(range, min, max) {
-    let arr = []
-    for (let x = 0; x < range; x++) {
-        arr.push(random.int(min, max))
-    }
-    return arr
-}
-  
 
 export default function DevChart() {
     const [chartDataState, setChartDataState] = useState({

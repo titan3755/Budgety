@@ -13,3 +13,11 @@ export function randomRangeCreator(range, min, max) {
     }
     return arr
 }
+
+export function transactionParser(transactionStr) {
+    return 0
+}
+
+export function transactionTranslator(transactionStr) {
+    return 0
+}
