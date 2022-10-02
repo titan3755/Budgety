@@ -7,3 +7,27 @@ export default function Expense() {
         </Fragment>
     )
 }
+
+function expenseAdd() {
+    return (
+        <Fragment>
+
+        </Fragment>
+    )
+}
+
+function expenseTransactions() {
+    return (
+        <Fragment>
+
+        </Fragment>
+    )
+}
+
+function expenseGraphs() {
+    return (
+        <Fragment>
+            
+        </Fragment>
+    )
+}

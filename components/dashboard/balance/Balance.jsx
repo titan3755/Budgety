@@ -106,7 +106,7 @@ function IncomeCard({data}) {
                             <h1 className="text-red-500 text-4xl font-bold font-overpass">&#36; {data.response ? data.response.expense : 0}</h1>
                         </div>
                         <div className="flex flex-row w-1/2 justify-end items-end align-middle">
-                            <ActionIcon className="p-5" variant="light" color="red" radius="xl" ><FontAwesomeIcon icon={faChevronDown} color="red" size="28" /></ActionIcon>
+                            <ActionIcon className="p-5" variant="light" color="red" radius="xl" ><FontAwesomeIcon icon={faChevronDown} color="red" size="lg" /></ActionIcon>
                         </div>
                     </div>
                     <div className="flex flex-row align-middle items-center w-full">
@@ -115,7 +115,7 @@ function IncomeCard({data}) {
                             <h1 className="text-green-500 text-4xl font-bold font-overpass">&#36; {data.response ? data.response.income : 0}</h1>
                         </div>
                         <div className="flex flex-row w-1/2 justify-end items-end align-middle">
-                            <ActionIcon className="p-5" variant="light" color="red" radius="xl" ><FontAwesomeIcon icon={faChevronUp} color="green" size="28" /></ActionIcon>
+                            <ActionIcon className="p-5" variant="light" color="red" radius="xl" ><FontAwesomeIcon icon={faChevronUp} color="green" size="lg" /></ActionIcon>
                         </div>
                     </div>
                 </div>
