@@ -162,7 +162,7 @@ function Transactions() {
     )
 }
 
-function TransactionPart() {
+export function TransactionPart() {
     return (
         <Fragment>
             <div className="">
