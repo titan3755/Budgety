@@ -75,7 +75,7 @@ export default function NavbarDashboard({activeSidebarItem, setActiveSidebarItem
   return (
     <Fragment>
       <div className="relative">
-        <Navbar style={navbarCollapsed === 0 ? {display: 'none'} : {display: ''}} height="90vh" width={{ base: 80 }} p="md">
+        <Navbar style={navbarCollapsed === 0 ? {display: 'none'} : {display: 'flex'}} height="90vh" width={{ base: 80 }} p="md">
         <Navbar.Section grow mt={50}>
           <Stack justify="center" spacing={0}>
             {links}

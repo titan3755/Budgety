@@ -15,9 +15,9 @@ export function randomRangeCreator(range, min, max) {
 }
 
 export function transactionParser(transactionStr) {
-    return 0
+    return JSON.parse(transactionStr)
 }
 
 export function transactionTranslator(transactionStr) {
-    return 0
+    return JSON.stringify(transactionStr)
 }
