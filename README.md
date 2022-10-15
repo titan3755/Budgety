@@ -4,9 +4,9 @@ The budget management app created by PhotoBytes Studios
 
 # To Do
 
-✅ Transaction UI
-❌ Statistics Page
-❌ Fix graph problems
-❌ Local budget storage functionality
-❌ Making dashboard responsive
-❌ Fixing bugs
+✅ Transaction UI <br />
+❌ Statistics Page <br />
+❌ Fix graph problems <br />
+❌ Local budget storage functionality <br />
+❌ Making dashboard responsive <br />
+❌ Fixing bugs <br />
