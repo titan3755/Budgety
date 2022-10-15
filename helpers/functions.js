@@ -14,10 +14,17 @@ export function randomRangeCreator(range, min, max) {
     return arr
 }
 
-export function transactionParser(transactionStr) {
-    return JSON.parse(transactionStr)
+export function transactionAdd(type, title, desc, value, transactionStr) {
+    let json = JSON.parse(transactionStr)
+    json.push({
+        type: type,
+        title: title,
+        desc: desc,
+        value: value
+    })
+    return JSON.stringify(json)
 }
 
-export function transactionTranslator(transactionStr) {
-    return JSON.stringify(transactionStr)
+export function clearTransactions() {
+    return '[]'
 }

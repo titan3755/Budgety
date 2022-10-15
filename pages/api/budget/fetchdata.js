@@ -14,7 +14,6 @@ export default async function fetchData(req, res) {
                 response: dbData,
                 success: true
             })
-
         }
         catch (err) {
             res.status(406).json({

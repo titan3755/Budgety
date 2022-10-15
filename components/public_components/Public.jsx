@@ -1,22 +1,30 @@
 import { Fragment, useState } from "react"
+import { useSession } from "next-auth/react"
 import { Input, Button } from "@mantine/core"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faDollarSign, faInfoCircle } from "@fortawesome/free-solid-svg-icons"
 import { showNotification } from "@mantine/notifications"
+import { useRouter } from "next/router"
 import axios from "axios"
 
-export function SectionInfoCards({title, desc}) {
+export function SectionInfoCards({ title, desc, balanceData }) {
     return (
         <Fragment>
-            <div className="flex flex-col justify-center p-6 gap-2 shadow-xl rounded-lg h-full">
-                <h1 className="text-2xl font-ubuntu font-semibold text-slate-500">{title}</h1>
-                <p className="text-sm font-alata font-medium text-slate-400">{desc}</p>
+            <div className="flex flex-col justify-center p-6 shadow-xl rounded-lg h-full">
+                <h1 className="text-2xl font-ubuntu font-semibold text-slate-600">{title}</h1>
+                <p className="font-right font-normal mb-2 text-slate-400 text-sm">{desc}</p>
+                <h2 className={`text-4xl font-overpass font-extrabold ${Number(balanceData) > 0 ? "text-green-500" : Number(balanceData) < 0 ? "text-red-500" : "text-gray-500"}`}>$ {Number(balanceData)}</h2>
             </div>
         </Fragment>
     )
 }
 
 export function TransactionAdd({ color, type }) {
+    const router = useRouter()
+    const refreshData = () => {
+        router.replace(router.asPath);
+    }
+    const { data: session, status } = useSession()
     const [formData, setFormData] = useState({
         title: '',
         desc: '',
@@ -24,7 +32,7 @@ export function TransactionAdd({ color, type }) {
     })
     const submitHandler = async (e) => {
         e.preventDefault()
-        let submission = await (await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/api/budget/transaction`, {type: type, title: formData.title, desc: formData.desc, value: formData.value})).data
+        let submission = await (await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/api/budget/transaction`, {type: type, title: formData.title, desc: formData.desc, value: formData.value, email: `${status === "authenticated" ? session.user.email : ''}`})).data
         if (submission.message === 'success') {
             showNotification({
                 title: 'Transaction executed successfully',
@@ -32,6 +40,7 @@ export function TransactionAdd({ color, type }) {
                 color: 'green',
                 autoClose: 4500
             })
+            refreshData()
         }
         else {
             showNotification({

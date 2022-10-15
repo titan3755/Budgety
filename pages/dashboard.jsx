@@ -25,7 +25,7 @@ export async function getServerSideProps(ctx) {
     else {
         return {
             props: {
-                data: {}
+                data: {response: {income: 0, expense: 0, transactions: '[]', email: ''}}
             }
         }
     }
