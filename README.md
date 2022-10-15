@@ -8,4 +8,5 @@ The budget management app created by PhotoBytes Studios
 * Statistics Page
 * Fix graph problems
 * Local budget storage functionality
+* Making dashboard responsive
 * Fixing bugs
